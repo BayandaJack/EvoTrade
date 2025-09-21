@@ -1,10 +1,7 @@
 "use client";
 
-import { headers } from "next/headers";
 import { auth, provider } from "../../../firebaseConfig";
 import { signInWithPopup } from "firebase/auth";
-import { stringify } from "querystring";
-import { json } from "stream/consumers";
 
 export default function SignInPage() {
   const handleGoogleAuth = async () => {

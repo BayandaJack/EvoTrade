@@ -1,12 +1,5 @@
 import { NextResponse } from "next/server";
-import * as admin from "firebase-admin";
-
-// Initialize Firebase Admin SDK once
-if (!admin.apps.length) {
-  admin.initializeApp({
-    credential: admin.credential.applicationDefault(),
-  });
-}
+import admin from "../../../../../firebaseAdminConfig";
 
 export async function POST(req: Request) {
   try {
