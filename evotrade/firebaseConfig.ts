@@ -1,7 +1,7 @@
 //Config file for auth
 import  { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
-
+import { getAuth, GoogleAuthProvider } from "firebase/auth";
 
 const config = {    //to store all our credentials
     apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
@@ -13,5 +13,8 @@ const config = {    //to store all our credentials
     measurementId: process.env.NEXT_PUBLIC_MEASUREMENT_ID,
 }
 
-const app = initializeApp();
-const analytics = getAnalytics(app);
+const app = initializeApp(config);
+const auth = getAuth(app);
+const provider = new GoogleAuthProvider();
+
+export { auth, provider };
